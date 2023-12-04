@@ -2,11 +2,21 @@
 	{% set style = ' sx-icon-' ~ design.icon.style %}
 {% endif %}
 
+{% if content.content.link %}
+{{ macros.linkStart(content.content.link, 'sx-icon-box' ~ style ) }}
+{% else %}
 <div class="sx-icon-box{{ style }}">
+{% endif %}
+
 	{% if content.content.icon is empty %}
 		<span class="iconify" data-icon="{{ content.content.iconify|default('solar:crown-bold') }}"></span>
 	{% endif %}
 	{% if content.content.icon %}
 		{{ content.content.icon.svgCode }}
 	{% endif %}
+
+{% if content.content.link %}
+{{ macros.linkEnd() }}
+{% else %}
 </div>
+{% endif %}
