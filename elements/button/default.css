@@ -1,0 +1,27 @@
+.sx-button {
+  display: inline-flex;
+  line-height: var(--bde-button-line-height);
+}
+
+.sx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  gap: 10px;
+  font-size: var(--bde-button-font-size);
+  line-height: var(--bde-button-line-height);
+}
+
+.sx-btn .iconify,
+.sx-btn svg {
+  fill: inherit;
+  width: 24px;
+  height: 24px;
+}
+
+.sx-btn-animated svg {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

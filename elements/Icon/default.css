@@ -1,0 +1,12 @@
+.sx-icon {
+  display: flex;
+}
+
+.sx-icon-box {
+  display: inline-flex;
+}
+
+.sx-icon-solid {
+	background-color: #000;
+	padding: 10px;
+}

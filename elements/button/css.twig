@@ -1,0 +1,45 @@
+%%SELECTOR%% {
+  	{{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% .sx-btn {
+	gap: {{ design.icon.space.style }};
+	{{ macros.backgroundColor(design.style.background) }}
+  	{{ macros.spacing_padding_all(design.style.padding) }}
+  	{{ macros.typography(design.style.typography, globalSettings) }}
+  	{{ macros.borders(design.style.border) }}
+}
+
+{% if design.icon.position == 'before' %}
+%%SELECTOR%% .sx-icon {
+	order: 1;
+}
+{% endif %}
+
+{% if design.icon.position == 'before' %}
+%%SELECTOR%% .sx-btn-text {
+	order: 2;
+}
+{% endif %}
+
+
+%%SELECTOR%% .sx-btn:hover {
+	{{ macros.typographyWithHoverableColorAndEffects(design.style.typography) }}
+	{{ macros.backgroundColor(design.style.background_hover) }}
+}
+
+%%SELECTOR%% svg {
+    color: {{ design.icon.color }};
+    fill: {{ design.icon.color|default('currentColor') }};
+    width: {{ design.icon.size.style }};
+    height: {{ design.icon.size.style }};
+}
+
+%%SELECTOR%% .sx-btn:hover svg {
+    color: {{ design.icon.color_hover }};
+  	fill: {{ design.icon.color_hover|default('currentColor') }};
+}
+
+%%SELECTOR%% .sx-btn-animated:hover svg {
+	margin-left: {{ design.icon.hover_margin.style }};
+}

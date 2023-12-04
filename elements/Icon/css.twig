@@ -1,0 +1,39 @@
+%%SELECTOR%% {
+  {{ macros.spacing_margin_y(design.spacing) }}
+}
+
+%%SELECTOR%% .sx-icon-box {
+    color: {{ design.icon.color|default('var(--bde-brand-primary-color)') }};
+	padding: {{ design.icon.padding.style }};
+
+	{{ macros.backgroundColor(design.icon.background) }}
+
+	{% if design.icon.corners == 'round' %}
+		border-radius: 999px;
+	{% elseif design.icon.corners == 'custom' %}
+		border-radius: {{ design.icon.radius.style|default('8px') }};
+	{% endif %}
+}
+
+%%SELECTOR%% .sx-icon-outline {
+	border: {{ design.icon.outline_width.style|default('4px') }} solid {{ design.icon.border|default('var(--bde-brand-primary-color)') }};
+}
+
+%%SELECTOR%%:hover .sx-icon-outline {
+	border-color: {{ design.icon.border_hover }};
+}
+
+%%SELECTOR%%:hover .sx-icon-box {
+    color: {{ design.icon.color_hover }};
+	{{ macros.backgroundColor(design.icon.background_hover) }}
+}
+
+%%SELECTOR%% svg {
+    fill: {{ design.icon.color|default('currentColor') }};
+    width: {{ design.icon.size.style|default('48px') }};
+    height: {{ design.icon.size.style|default('48px') }};
+
+	{% if design.icon.rotate %}
+		transform: rotate({{ design.icon.rotate }}deg);
+	{% endif %}
+}

@@ -1,0 +1,23 @@
+{% set variant = design.style.preset == 'custom' ? '' : ' button-atom--primary' %}
+
+{% if design.style.preset and design.style.preset != 'custom' %}
+	{% set variant = ' button-atom--' ~ design.style.preset %}
+{% endif %}
+
+{% if design.icon.hover_margin.style %}
+	{% set animated = ' sx-btn-animated' %}
+{% endif %}
+
+{{ macros.linkStart(content.content.link, 'sx-btn' ~ variant ~ animated ) }}
+	<span class="sx-btn-text" {{ dataContentEditablePropertyPath( 'content.content.text' ) }}>{{ content.content.text|default('Click Here') }}</span>
+
+	{% if content.content.iconify %}
+		<span class="sx-icon iconify"></span>
+	{% endif %}
+
+	{% if content.content.icon is not empty and content.content.iconify is empty %}
+		<span class="sx-icon">
+			{{ content.content.icon.svgCode }}
+		</span>
+	{% endif %}
+{{ macros.linkEnd() }}
