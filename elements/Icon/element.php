@@ -250,7 +250,7 @@ class Icon extends \Breakdance\Elements\Element
 
     static function dependencies()
     {
-        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_ICONIFY%%','/wp-content/plugins/wpsix/dist/libs/iconify/wpsix-iconify.js'],],'1' =>  ['title' => 'Frontend','inlineScripts' => ['new WPSixIconify(\'%%SELECTOR%%\', { iconify: {{ content.content.iconify|json_encode }} });
+        return ['0' =>  ['scripts' => ['%%BREAKDANCE_REUSABLE_ICONIFY%%','/wp-content/plugins/wpsix/dist/js/wpsix-iconify.js'],],'1' =>  ['title' => 'Frontend','inlineScripts' => ['new WPSixIconify(\'%%SELECTOR%%\', { iconify: {{ content.content.iconify|json_encode }} });
 '],'builderCondition' => 'return false;',],];
     }
 
