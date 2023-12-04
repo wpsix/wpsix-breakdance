@@ -5,6 +5,7 @@
 %%SELECTOR%% .sx-icon-box {
     color: {{ design.icon.color|default('var(--bde-brand-primary-color)') }};
 	padding: {{ design.icon.padding.style }};
+	box-shadow: {{ design.icon.effects.shadow.style }};
 
 	{{ macros.backgroundColor(design.icon.background) }}
 
@@ -32,8 +33,15 @@
     fill: {{ design.icon.color|default('currentColor') }};
     width: {{ design.icon.size.style|default('48px') }};
     height: {{ design.icon.size.style|default('48px') }};
+	transition-duration: {{ design.icon.effects.transition.style }};
 
 	{% if design.icon.rotate %}
 		transform: rotate({{ design.icon.rotate }}deg);
+	{% endif %}
+}
+
+%%SELECTOR%%:hover svg {
+	{% if design.icon.rotate_hover %}
+		transform: rotate({{ design.icon.rotate_hover }}deg);
 	{% endif %}
 }
