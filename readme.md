@@ -1,6 +1,8 @@
 # A WordPress plugin for breakdance page builder.
 This plugin allows you to use over 200,000 open source vector icons from iconify.design library without uploading custom svg files to your media library.
 
+Video of how it works: https://vimeo.com/891165665
+
 ## How to use it.
 
 1. Install the plugin on your wordpress website.
