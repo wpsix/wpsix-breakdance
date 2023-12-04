@@ -3,11 +3,16 @@
 }
 
 %%SELECTOR%% .sx-btn {
-	gap: {{ design.icon.space.style }};
 	{{ macros.backgroundColor(design.style.background) }}
-  	{{ macros.spacing_padding_all(design.style.padding) }}
-  	{{ macros.typography(design.style.typography, globalSettings) }}
-  	{{ macros.borders(design.style.border) }}
+	{{ macros.spacing_padding_all(design.style.padding) }}
+	{{ macros.typography(design.style.typography, globalSettings) }}
+	{{ macros.borders(design.style.border) }}
+	gap: {{ design.icon.space.style }};
+	transition-duration: {{ design.style.transition.style }};
+
+	{% if design.style.rounded and design.style.border.radius is empty %}
+		border-radius: 150px;
+	{% endif %}
 }
 
 {% if design.icon.position == 'before' %}
@@ -24,22 +29,27 @@
 
 
 %%SELECTOR%% .sx-btn:hover {
+	gap: {{ design.icon.space_hover.style }};
 	{{ macros.typographyWithHoverableColorAndEffects(design.style.typography) }}
 	{{ macros.backgroundColor(design.style.background_hover) }}
 }
 
 %%SELECTOR%% svg {
-    color: {{ design.icon.color }};
-    fill: {{ design.icon.color|default('currentColor') }};
-    width: {{ design.icon.size.style }};
-    height: {{ design.icon.size.style }};
+	color: {{ design.icon.color }};
+	fill: {{ design.icon.color|default('currentColor') }};
+	width: {{ design.icon.size.style }};
+	height: {{ design.icon.size.style }};
+	transition-duration: {{ design.icon.transition.style }};
+
+	{% if design.icon.rotate %}
+		transform: rotate({{ design.icon.rotate }}deg);
+	{% endif %}
 }
 
 %%SELECTOR%% .sx-btn:hover svg {
-    color: {{ design.icon.color_hover }};
-  	fill: {{ design.icon.color_hover|default('currentColor') }};
-}
-
-%%SELECTOR%% .sx-btn-animated:hover svg {
-	margin-left: {{ design.icon.hover_margin.style }};
+  color: {{ design.icon.color_hover }};
+  fill: {{ design.icon.color_hover|default('currentColor') }};
+	{% if design.icon.rotate_hover %}
+		transform: rotate({{ design.icon.rotate_hover }}deg);
+	{% endif %}
 }

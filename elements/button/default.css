@@ -10,6 +10,7 @@
   vertical-align: middle;
   gap: 10px;
   font-size: var(--bde-button-font-size);
+  transition: ease-in-out all;
   line-height: var(--bde-button-line-height);
 }
 
@@ -18,10 +19,5 @@
   fill: inherit;
   width: 24px;
   height: 24px;
-}
-
-.sx-btn-animated svg {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition: ease-in-out all 300ms;
 }

@@ -3,7 +3,7 @@
 }
 
 %%SELECTOR%% .sx-icon-box {
-    color: {{ design.icon.color|default('var(--bde-brand-primary-color)') }};
+  color: {{ design.icon.color|default('var(--bde-brand-primary-color)') }};
 	padding: {{ design.icon.padding.style }};
 	box-shadow: {{ design.icon.effects.shadow.style }};
 
@@ -25,14 +25,14 @@
 }
 
 %%SELECTOR%%:hover .sx-icon-box {
-    color: {{ design.icon.color_hover }};
+  color: {{ design.icon.color_hover }};
 	{{ macros.backgroundColor(design.icon.background_hover) }}
 }
 
 %%SELECTOR%% svg {
-    fill: {{ design.icon.color|default('currentColor') }};
-    width: {{ design.icon.size.style|default('48px') }};
-    height: {{ design.icon.size.style|default('48px') }};
+  fill: {{ design.icon.color|default('currentColor') }};
+  width: {{ design.icon.size.style|default('48px') }};
+  height: {{ design.icon.size.style|default('48px') }};
 	transition-duration: {{ design.icon.effects.transition.style }};
 
 	{% if design.icon.rotate %}
