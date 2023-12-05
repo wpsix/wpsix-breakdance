@@ -1,5 +1,5 @@
 %%SELECTOR%% {
-  	{{ macros.spacing_margin_y(design.spacing) }}
+  {{ macros.spacing_margin_y(design.spacing) }}
 }
 
 %%SELECTOR%% .sx-btn {
@@ -47,8 +47,8 @@
 }
 
 %%SELECTOR%% .sx-btn:hover svg {
-  color: {{ design.icon.color_hover }};
-  fill: {{ design.icon.color_hover|default('currentColor') }};
+	color: {{ design.icon.color_hover }};
+	fill: {{ design.icon.color_hover|default('currentColor') }};
 	{% if design.icon.rotate_hover %}
 		transform: rotate({{ design.icon.rotate_hover }}deg);
 	{% endif %}
