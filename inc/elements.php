@@ -3,6 +3,7 @@
 use function Breakdance\Util\getDirectoryPathRelativeToPluginFolder;
 
 add_action('breakdance_reusable_dependencies_urls', function ($urls) {
+	$urls['simpleparallax'] = WPSIX_PLUGIN_URL . 'dist/libs/simple-parallax/simpleParallax.min.js';
 	$urls['iconify'] = WPSIX_PLUGIN_URL . 'dist/libs/iconify/iconify.min.js';
 	return $urls;
 });

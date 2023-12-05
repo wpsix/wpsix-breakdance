@@ -1,0 +1,68 @@
+{% set c = content.content %}
+{% set size = c.size %}
+{% set img = c.image %}
+{% set lazyLoad = c.lazy_load %}
+{% if c.alt.alt == 'disable' %}
+ {% set alt = false %}
+{% elseif c.alt.alt == 'custom' %}
+ {% set alt = c.alt.custom_alt %}
+{% else %}
+  {% set alt = img.alt %}
+{% endif %}
+
+{# Link #}
+{% set linkType = c.link.link_type %}
+{% set hasLink = linkType != null %}
+{% set lightboxImage = img.sizes[c.link.image_size]|default(img) %}
+
+{% set links = {
+    url: c.link.url,
+    media: img.url,
+    lightbox: lightboxImage.url
+} %}
+{% set link = links[linkType] %}
+{% set target = c.link.new_tab ? '_blank' : '_self' %}
+
+{# Caption #}
+{% set fromLibrary = c.caption.from_library|default(false) %}
+{% set caption = fromLibrary ? img.caption : c.caption.caption %}
+{% set captionPosition = design.caption.position %}
+{% set hasCaption = (fromLibrary and img.caption) or c.caption.caption ? true : false %}
+
+{# Mask #}
+{% set hasMask = design.effects.mask.shape != null %}
+
+{# Additional CSS Classes #}
+{% set captionClass = captionPosition ? 'breakdance-image--caption-' ~ captionPosition : '' %}
+{% set cssClasses = [
+	'breakdance-image--' ~ img.id,
+	captionClass
+]|join(" ") %}
+
+<figure class="breakdance-image {{ cssClasses|trim }}">
+	<div class="breakdance-image-container">
+    {% if hasLink %}
+    <a class="breakdance-image-link breakdance-image-link--{{ linkType }}" href="{{ link }}" target="{{ target }}" rel="noopener" data-sub-html="{{ caption }}" data-lg-size="{{ lightboxImage.width }}-{{ lightboxImage.height }}">
+      {% endif %}
+
+      {% if hasMask %}
+      <div class="breakdance-image__mask">
+        {% endif %}
+
+        {{ macros.image(img, size, alt, lazyLoad, 'wpsix-parallax') }}
+
+        {% if hasMask %}
+      </div>
+      {% endif %}
+
+      {% if hasLink %}
+    </a>
+    {% endif %}
+	</div>
+
+	{% if hasCaption %}
+		<figcaption class="breakdance-image__caption">
+			{{ caption }}
+		</figcaption>
+	{% endif %}
+</figure>
