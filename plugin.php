@@ -10,7 +10,6 @@
  */
 
 define( 'WPSIX_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPSIX_ASSETS_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPSIX_PLUGIN', __DIR__ );
 
 require_once plugin_dir_path( __FILE__ ) . 'inc/elements.php';
