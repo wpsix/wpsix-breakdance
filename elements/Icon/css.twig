@@ -3,7 +3,7 @@
 }
 
 %%SELECTOR%% .sx-icon-box {
-  color: {{ design.icon.color|default('var(--bde-brand-primary-color)') }};
+  color: {{ design.icon.color }};
 	padding: {{ design.icon.padding.style }};
 	box-shadow: {{ design.icon.effects.shadow.style }};
 
@@ -16,13 +16,15 @@
 	{% endif %}
 }
 
+{% if design.icon.style == 'outline' %}
 %%SELECTOR%% .sx-icon-outline {
-	border: {{ design.icon.outline_width.style|default('4px') }} solid {{ design.icon.border|default('var(--bde-brand-primary-color)') }};
+	border: {{ design.icon.outline_width.style | default('4px') }} solid {{ design.icon.border | default('var(--bde-brand-primary-color)') }};
 }
 
 %%SELECTOR%%:hover .sx-icon-outline {
 	border-color: {{ design.icon.border_hover }};
 }
+{% endif %}
 
 %%SELECTOR%%:hover .sx-icon-box {
   color: {{ design.icon.color_hover }};
@@ -30,9 +32,9 @@
 }
 
 %%SELECTOR%% svg {
-  fill: {{ design.icon.color|default('currentColor') }};
-  width: {{ design.icon.size.style|default('48px') }};
-  height: {{ design.icon.size.style|default('48px') }};
+  fill: {{ design.icon.color }};
+  width: {{ design.icon.size.style }};
+  height: {{ design.icon.size.style }};
 	transition-duration: {{ design.icon.effects.transition.style }};
 
 	{% if design.icon.rotate %}

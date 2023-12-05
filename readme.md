@@ -11,7 +11,7 @@ Video about usage: https://vimeo.com/891165665
 4. That's all. Enjoy the plugin for free.
 
 ## Note
-I am working on new Breakdance templates. Soon, my fresh site will be available on wpsix.com domain with high-quality breakdance templates. I am also planning to release my templates on breakdance official website.
+I am working on new Breakdance templates. Soon, my fresh site will be available on https://wpsix.com domain with high-quality breakdance templates. I am also planning to release my templates on breakdance official website.
 
 ## License
 

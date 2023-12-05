@@ -4,6 +4,13 @@
 
 .sx-icon-box {
   display: inline-flex;
+  color: var(--bde-brand-primary-color);
+}
+
+.sx-icon svg {
+  fill: currentColor;
+  width: 48px;
+  height: 48px;
 }
 
 .sx-icon-solid {
