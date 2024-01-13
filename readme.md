@@ -14,7 +14,7 @@ Example: https://vimeo.com/891165665
 ## What's included in the downloaded package
 
 - Access to more than 200,000 open source icons.
-- Button with more and easier customization.
+- Button element with more and easier customization.
 - Image element with parallax effect.
 - Icon element.
 
