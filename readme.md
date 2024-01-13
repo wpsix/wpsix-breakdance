@@ -18,6 +18,9 @@ Example: https://vimeo.com/891165665
 - Image element with parallax effect.
 - Icon element.
 
+## Bug report
+If you found a bug what is related to wpsix breakdance plugin then report it by [opening a new issue](https://github.com/wpsix/wpsix-breakdance/issues/new). It can be helpful if you mention browser version and the device type where was the issue detected.
+
 ## Note
 I am working on new Breakdance templates. Soon, my fresh site will be available on https://wpsix.com domain with high-quality breakdance templates. I am also planning to release my templates on breakdance official website.
 
