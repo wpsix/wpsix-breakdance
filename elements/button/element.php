@@ -35,7 +35,7 @@ class Button extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Theme Button';
+        return 'Six Button';
     }
 
     static function className()

@@ -35,7 +35,7 @@ class Image extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Theme Image';
+        return 'Six Image';
     }
 
     static function className()

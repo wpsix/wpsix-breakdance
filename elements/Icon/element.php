@@ -35,7 +35,7 @@ class Icon extends \Breakdance\Elements\Element
 
     static function name()
     {
-        return 'Theme Icon';
+        return 'Six Icon';
     }
 
     static function className()

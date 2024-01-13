@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WPSix
+ * Plugin Name: WPSix Breakdance
  * Plugin URI: https://wpsix.com
  * Description: Plugin for wpsix.com themes.
  * Version: 1.0.0

@@ -19,5 +19,7 @@
   fill: inherit;
   width: 24px;
   height: 24px;
-  transition: ease-in-out all 300ms;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-property: gap, background-color, border-color;
 }

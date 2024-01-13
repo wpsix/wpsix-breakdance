@@ -1,3 +1,5 @@
+{% set preset = design.style.preset|default('primary') %}
+
 %%SELECTOR%% {
   {{ macros.spacing_margin_y(design.spacing) }}
 }
@@ -7,12 +9,55 @@
 	{{ macros.spacing_padding_all(design.style.padding) }}
 	{{ macros.typography(design.style.typography, globalSettings) }}
 	{{ macros.borders(design.style.border) }}
+
 	gap: {{ design.icon.space.style }};
 	transition-duration: {{ design.style.transition.style }};
 
 	{% if design.style.rounded and design.style.border.radius is empty %}
 		border-radius: 150px;
 	{% endif %}
+
+	{# Borders: Outline #}
+	{% if design.style.outline %}
+		{% if design.style.outline and design.style.width %}
+			border-width: {{ design.style.width.style }};
+		{% endif %}
+
+		{% if design.style.background is empty and design.style.color is empty %}
+      --bde-button-{{ preset }}-text-color: var(--bde-brand-primary-color);
+      --bde-button-{{ preset }}-border-color: var(--bde-brand-primary-color);
+      --bde-button-{{ preset }}-background-color: transparent;
+
+      {% if design.style.no_fill_on_hover %}
+        --bde-button-{{ preset }}-background-color-hover: transparent;
+        --bde-button-{{ preset }}-text-color-hover: var(--bde-brand-primary-color);
+        --bde-button-{{ preset }}-border-color-hover: var(--bde-brand-primary-color);
+      {% else %}
+        --bde-button-{{ preset }}-background-color-hover: var(--bde-brand-primary-color);
+		  {% endif %}
+		{% endif %}
+
+		{% if design.style.color %}
+      --bde-button-{{ preset }}-text-color: {{ design.style.color }};
+      --bde-button-{{ preset }}-border-color: {{ design.style.color }};
+      --bde-button-{{ preset }}-background-color: transparent;
+
+      {% if design.style.no_fill_on_hover %}
+        --bde-button-{{ preset }}-background-color-hover: transparent;
+        --bde-button-{{ preset }}-text-color-hover: {{ design.style.color }};
+        --bde-button-{{ preset }}-border-color-hover: {{ design.style.color }};
+      {% else %}
+        --bde-button-{{ preset }}-background-color-hover: {{ design.style.color_hover|default(design.style.color) }};
+      {% endif %}
+		{% endif %}
+	{% endif %}
+}
+
+%%SELECTOR%% .sx-btn:hover {
+	{{ macros.typographyWithHoverableColorAndEffects(design.style.typography) }}
+	{{ macros.backgroundColor(design.style.background_hover) }}
+
+	gap: {{ design.icon.space_hover.style }};
 }
 
 {% if design.icon.position == 'before' %}
@@ -26,13 +71,6 @@
 	order: 2;
 }
 {% endif %}
-
-
-%%SELECTOR%% .sx-btn:hover {
-	gap: {{ design.icon.space_hover.style }};
-	{{ macros.typographyWithHoverableColorAndEffects(design.style.typography) }}
-	{{ macros.backgroundColor(design.style.background_hover) }}
-}
 
 %%SELECTOR%% svg {
 	color: {{ design.icon.color }};
@@ -49,6 +87,7 @@
 %%SELECTOR%% .sx-btn:hover svg {
 	color: {{ design.icon.color_hover }};
 	fill: {{ design.icon.color_hover|default('currentColor') }};
+
 	{% if design.icon.rotate_hover %}
 		transform: rotate({{ design.icon.rotate_hover }}deg);
 	{% endif %}
