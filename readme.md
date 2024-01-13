@@ -11,9 +11,9 @@ Example: https://vimeo.com/891165665
 3. Find and copy the icon code from https://icon-sets.iconify.design example: solar:crown-bold
 4. That's all. Enjoy the plugin for free.
 
-## What's included in downloaded package
+## What's included in the downloaded package
 
-- More than 200,000 open source icons.
+- Access to more than 200,000 open source icons.
 - Button with more and easier customization.
 - Parallax image effect.
 - Icon element.
