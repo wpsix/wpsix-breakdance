@@ -15,7 +15,7 @@ Example: https://vimeo.com/891165665
 
 - Access to more than 200,000 open source icons.
 - Button with more and easier customization.
-- Parallax image effect.
+- Image element with parallax effect.
 - Icon element.
 
 ## Note
