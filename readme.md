@@ -6,10 +6,10 @@ Example: https://vimeo.com/891165665
 ## How to use
 
 1. Download the plugin files from releases (wpsix-breakdance.zip).
-1. Install this plugin on your WordPress website by uploading it.
-2. Add WPSix element like "Six Button" or "Six Icon" to your page in Breakdance editor.
-3. Find and copy the icon code from https://icon-sets.iconify.design example: solar:crown-bold
-4. That's all. Enjoy the plugin for free.
+2. Install this plugin on your WordPress website by uploading it.
+3. Add WPSix element like "Six Button" or "Six Icon" to your page in Breakdance editor.
+4. Find and copy the icon code from https://icon-sets.iconify.design example: solar:crown-bold
+5. That's all. Enjoy the plugin for free.
 
 ## What's included in the downloaded package
 
