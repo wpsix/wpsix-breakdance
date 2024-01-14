@@ -30,10 +30,11 @@
 
       {% if design.style.no_fill_on_hover %}
         --bde-button-{{ preset }}-background-color-hover: transparent;
-        --bde-button-{{ preset }}-text-color-hover: var(--bde-brand-primary-color);
-        --bde-button-{{ preset }}-border-color-hover: var(--bde-brand-primary-color);
+        --bde-button-{{ preset }}-text-color-hover: {{ design.style.color_hover|default('var(--bde-brand-primary-color)') }};
+        --bde-button-{{ preset }}-border-color-hover: {{ design.style.color_hover|default('var(--bde-brand-primary-color)') }};
       {% else %}
-        --bde-button-{{ preset }}-background-color-hover: var(--bde-brand-primary-color);
+        --bde-button-{{ preset }}-background-color-hover: {{ design.style.color_hover|default('var(--bde-brand-primary-color)') }};
+        --bde-button-{{ preset }}-border-color-hover: {{ design.style.color_hover|default('var(--bde-brand-primary-color)') }};
 		  {% endif %}
 		{% endif %}
 
@@ -44,8 +45,8 @@
 
       {% if design.style.no_fill_on_hover %}
         --bde-button-{{ preset }}-background-color-hover: transparent;
-        --bde-button-{{ preset }}-text-color-hover: {{ design.style.color }};
-        --bde-button-{{ preset }}-border-color-hover: {{ design.style.color }};
+        --bde-button-{{ preset }}-text-color-hover: {{ design.style.color_hover|default(design.style.color) }};
+        --bde-button-{{ preset }}-border-color-hover: {{ design.style.color_hover|default(design.style.color) }};
       {% else %}
         --bde-button-{{ preset }}-background-color-hover: {{ design.style.color_hover|default(design.style.color) }};
       {% endif %}
